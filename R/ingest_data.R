@@ -1,6 +1,7 @@
 # Functions for ingesting phylogenetic trees and cleaning up names
 
 # Read in an association matrix
+#' @export
 read_associations = function(filepath) {
     # Read in the host-symbiont association matrix)
     assoc_mat = as.matrix(
@@ -21,6 +22,7 @@ read_associations = function(filepath) {
 }
 
 # Read in phylogenetic tree from a .nexus file
+#' @export
 read_phylo = function(filepath, nexus_format, taxa_to_keep=NULL, label_fix=NULL) {
 
     # read in the nexus tree

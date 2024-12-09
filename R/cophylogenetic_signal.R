@@ -1,13 +1,5 @@
 # Functions for running tests of cophylogenetic signal (ParaFit).
 
-# Calculate cophenetic distances for a phylogenetic tree
-get_cophenetic = function(phylo, taxa_sort) {
-
-    cophenetic_dist = as.matrix(cophenetic(phylo))[taxa_sort, taxa_sort]
-
-    return(cophenetic_dist)
-}
-
 # A single run of the parafit function
 # Based on https://github.com/alixmatthews/cophylogenetic/blob/master/parafit_script.R
 single_parafit_run = function(i, host_dist, symbiont_dist, assoc_mat) {
@@ -21,11 +13,13 @@ single_parafit_run = function(i, host_dist, symbiont_dist, assoc_mat) {
         correction = 'lingoes'
         )
 
-    return (tmp)
+    return(tmp)
 }
 
-# Based on https://github.com/alixmatthews/cophylogenetic/blob/master/parafit_script.R
+# Multiple parafit runs.
 # Use lapply to run the single_parafit_run() multiple times (n_runs)
+# Based on https://github.com/alixmatthews/cophylogenetic/blob/master/parafit_script.R
+#' @export
 run_parafit_loop = function(host_dist, symbiont_dist, assoc_mat, n_runs) {
 
     message(paste0("Running parafit ", n_runs, " times."))
@@ -49,6 +43,7 @@ run_parafit_loop = function(host_dist, symbiont_dist, assoc_mat, n_runs) {
 
 # Generate summary stats (pval means, etc.) for the results of run_parafit_loop()
 # Based on https://github.com/alixmatthews/cophylogenetic/blob/master/parafit_script.R
+#' @export
 gather_stats = function(res, assoc_mat) {
     # Mean global p-value
     mean_global_pval = mean(sapply(X = as.matrix(res), FUN = '[[', n = 2))
