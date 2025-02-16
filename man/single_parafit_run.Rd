@@ -5,7 +5,7 @@
 \title{A single run of the parafit function
 Based on https://github.com/alixmatthews/cophylogenetic/blob/master/parafit_script.R}
 \usage{
-single_parafit_run(i, host_dist, symbiont_dist, assoc_mat)
+single_parafit_run(i, host_dist, symbiont_dist, assoc_mat, correction_method)
 }
 \description{
 A single run of the parafit function

@@ -6,7 +6,13 @@
 Use lapply to run the single_parafit_run() multiple times (n_runs)
 Based on https://github.com/alixmatthews/cophylogenetic/blob/master/parafit_script.R}
 \usage{
-run_parafit_loop(host_dist, symbiont_dist, assoc_mat, n_runs)
+run_parafit_loop(
+  host_dist,
+  symbiont_dist,
+  assoc_mat,
+  n_runs,
+  correction_method
+)
 }
 \arguments{
 \item{host_dist}{host distance matrix}
