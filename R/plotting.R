@@ -27,8 +27,8 @@ plot_cophylo = function(h_phy, s_phy, results, filename, plot_h, plot_w, palette
         ) |>
         dplyr::pull(style)
 
-    hs_links = data.frame(parafit_results$mean_link_adjpvals$symbiont, parafit_results$mean_link_adjpvals$host)
-    cophy = phytools::cophylo(s_phy, h_phy, assoc = hs_links, rotate = TRUE)
+    hs_links = data.frame(parafit_results$mean_link_adjpvals$host, parafit_results$mean_link_adjpvals$symbiont)
+    cophy = phytools::cophylo(h_phy, s_phy, assoc = hs_links, rotate = TRUE)
 
     pdf(file = paste0(filename, '.pdf'), height = plot_h, width = plot_w)
 
