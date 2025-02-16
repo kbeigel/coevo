@@ -1,10 +1,6 @@
----
-title: "coevo: Comparing tests of cophylogenetic signal (ParaFit and PACo)"
-author: K. Beigel
-date: `r Sys.Date()`
----
+# coevo: Comparing tests of cophylogenetic signal (ParaFit and PACo)
 
-# Install the package using `devtools::install_github()`
+## Install the package using `devtools::install_github()`
 ```{r}
 devtools::install_github('kbeigel/coevo')
 ```
@@ -14,7 +10,7 @@ library(coevo)
 ```
 
 
-# Read in host-symbiont association matrix
+## Read in host-symbiont association matrix
 
 Rownames should be the host taxa and column names should be the symbiont taxa, e.g.:
 
@@ -33,7 +29,7 @@ hs_assoc = read_associations('testdata/hs_matrix.csv')
 ```
 
 
-# Read in host and symbiont trees
+## Read in host and symbiont trees
 ```{r}
 host_phylo_file = 'testdata/host_tree.nexus'
 h = read_phylo(
@@ -52,7 +48,7 @@ s = read_phylo(
 )
 ```
 
-# Run ParaFit analysis
+## Run ParaFit analysis
 
 ```{r}
 parafit_results = parafit_analysis(
@@ -64,7 +60,7 @@ parafit_results = parafit_analysis(
 )
 ```
 
-# Run PACo analysis
+## Run PACo analysis
 ```{r}
 paco_results = paco_analysis(
     host_tree = h,
@@ -74,7 +70,7 @@ paco_results = paco_analysis(
 )
 ```
 
-# Compile the results from ParaFit and PACo
+## Compile the results from ParaFit and PACo
 ```{r}
 # Global results
 global_results = compile_global_results(
@@ -89,7 +85,7 @@ link_results = compile_link_results(
 )
 ```
 
-# Plotting the cophylo
+## Plotting the cophylo
 ```{r}
 # Plot the individual link results on cophylo
 plot_cophylo(
