@@ -1,0 +1,6 @@
+data/
+testdata/
+renv/
+.lintr
+.Rprofile
+.Rbuildignore

@@ -1,0 +1,10 @@
+Package: coevo
+Title: Collection of Coevolutionary Tests
+Version: 0.0.1
+Authors@R: 
+    person("Beigel", "Katherine", , "katherinebeigel@gmail.com", role = c("aut", "cre"))
+Description: Provides wrapper functions for common tests of coevolution. Methods ParaFit and PACo are used for testing the cophylogenetic signal by evaluating cophenetic distances of host-parasite (or host-symbiont) trees. Researchers often want to run multiple types of tests and compare them, so `coevo` provides an easier way to run these tests and compare results.
+License: `use_gpl3_license()`
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
