@@ -1,4 +1,4 @@
-# coevo: Comparing tests of cophylogenetic signal (ParaFit and PACo)
+# coevo: Evaluating coevolution through tests of cophylogenetic signal (ParaFit and PACo)
 
 ## Install the package using `devtools::install_github()`
 ```{r}

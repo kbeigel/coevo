@@ -1,5 +1,5 @@
 # coevo
-Functions for running tests of cophylogenetic signal to assess coevolution in symbiotic systems.
+Functions for running tests of coevolution (cophylogenetic signal) to assess coevolution in symbiotic systems.
 
 
 ## Install the package using `devtools::install_github()`
