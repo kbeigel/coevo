@@ -32,6 +32,20 @@ plot_cophylo = function(h_phy, s_phy, results, filename, plot_h, plot_w, palette
 
     pdf(file = paste0(filename, '.pdf'), height = plot_h, width = plot_w)
 
+
+    # Set up layout to plot legend and cophylo
+    layout(matrix(c(1, 2), nrow = 2), heights = c(0.1, 0.90))
+
+    # Plot legend
+    par(oma = c(0, 0, 0.5, 0))
+    par(mar = c(0, 0, 1.1, 0)) 
+    plot.new()
+    legend('top', legend = c('ParaFit', 'PACo', 'ParaFit and PACo'), title = 'Link significance', 
+        col =  palette, lty = 'solid', cex = 0.8, xpd = TRUE, inset = c(0.04, -0.06))
+    
+    # Plot cophylo
+    par(oma = c(0, 0, 0, 0))
+    par(fig = c(0, 1, 0, 0.9), new = TRUE)
     plot(
         cophy, 
         link.col = line_colors, link.lty = line_style, 
