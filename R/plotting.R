@@ -19,9 +19,9 @@ plot_cophylo = function(h_phy, s_phy, results, filename, plot_h, plot_w, palette
     line_style = dplyr::mutate(
         results,
         style = dplyr::case_when(
-            ParaFit_F1_padj_comp == 'all_significant' ~ 'solid',
+            ParaFit_F1_padj_comp == 'all_significant'| PACo_Jackknife_sig == TRUE ~ 'solid',
             ParaFit_F1_padj_comp == 'mixed_significant' ~ 'dotdash',
-            ParaFit_F1_padj_comp == 'none_significant' ~ 'longdash',
+            ParaFit_F1_padj_comp == 'none_significant' | PACo_Jackknife_sig == FALSE ~ 'longdash',
             .default = 'gray20'
             )
         ) |>
