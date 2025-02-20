@@ -85,6 +85,20 @@ link_results = compile_link_results(
 )
 ```
 
+The output of `compile_link_results()` will have the following categories:
+- `Host`: the host taxon
+- `Symbiont`: the symbiont taxon
+- `ParaFit_F1_mean_adj_pval`: mean of ParaFitLink F1 adjusted pvalues (BH) across all runs
+- `ParaFit_F2_mean_adj_pval`: mean of ParaFitLink F2 adjusted pvalues (BH) across all runs
+- `ParaFit_F1_padj_comp`: indicates whether the adjusted pvalues for ParaFitLink1 across all runs were all signficiant ('all_significant'), whether none were significant ('none_significant'), or whether there was a mix of significant and not significant values ('mixed_significant')
+- `ParaFit_F2_padj_comp`: indicates whether the adjusted pvalues for ParaFitLink2 across all runs were all signficiant ('all_significant'), whether none were significant ('none_significant'), or whether there was a mix of significant and not significant values ('mixed_significant')
+- `PACo_Jackknife_Mean`: mean jackknife value from PACo
+- `PACo_Jackknife_UCI`: upper confidence interval for jackknife
+- `ParaFit_F1_sig`: was ParaFitLink1 signficiant?
+- `ParaFit_F2_sig`: was ParaFitLink2 signficiant?
+- `PACo_Jackknife_sig`: was PACo_Jackknife_UCI below the mean of all jackknife squared residuals? (this indicates that the link did not contribute as much to the m2xy and therefore are likely to be instances of taxa links showing coevolutionary signal)
+
+
 ## Plotting the cophylo
 ```{r}
 # Plot the individual link results on cophylo
